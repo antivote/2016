@@ -1,47 +1,318 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+
+
   <head>
+
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Anti-Vote 2016 by antivote</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-    <meta name="viewport" content="width=device-width">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+
+    <title>Who is Australia's No.1 Political Pariah?</title>
+    <meta name="description" content="Share your pick and help send a message to the folk that voted them in.">
+    <meta name="keywords" content="auspol australia">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Anti-Vote 2016">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#222222">
+
+
+    <link rel="icon" href="assets/images/favicons/favicon-64x64.png">
+    <!--[if IE]> <link rel="shortcut icon" href="favicon.ico"> <![endif]-->
+
+
+    <meta property="og:site_name" content="Who is Australia's No.1 Political Pariah?">
+    <meta property="og:title" content="Anti-Vote 2016: I vote to truncate Turnbull.">
+    <meta property="og:description" content="The nicest way of hating is a disapproval rating. Vote for Australia’s no.1 political pariah and help send a message to the folks who voted them in. Turnbull’s Bondi, Paddington and Dover Heights we’re looking at you!">
+    <meta property="og:image" content="http://anti-vote.xyz/assets/images/share/turnbull.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://anti-vote.xyz/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="http://anti-vote.xyz/">
+
+
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-79839222-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
   </head>
+
+
+
+
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Anti-Vote 2016</h1>
-        <p>Who is Australia&#39;s No.1 Political Pariah?</p>
 
-        <p class="view"><a href="https://github.com/antivote/2016">View the Project on GitHub <small>antivote/2016</small></a></p>
+    <!-- Routes -->
+    <div id="wtf"></div>
+    <div id="truncate-turnbull"></div>
+    <div id="moderate-morrison"></div>
+    <div id="denounce-dutton"></div>
+    <div id="hate-on-hunt"></div>
 
+    <header class="header">
+      <img class="header-headline" alt="Who is Australia's No.1 Political Pariah?" src="assets/images/antivote-headline.svg">
+      <span class="sub">Share your pick and help send a message<br>
+      to the folk that voted them in.</span>
+    </header>
 
-        <ul>
-          <li><a href="https://github.com/antivote/2016/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/antivote/2016/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/antivote/2016">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
+    <main class="main">
+
+      <aside class="instructions">
+        <h3>Place a <span class="number">1</span> in a box below</h3>
+      </aside>
+
+      <ul id="profile-list" class="profile-list">
+
+        <!-- Turnbull -->
+        <li>
+          <a href="#truncate-turnbull" data-share="truncate-turnbull/" data-title="Turnbull" class="profile profile-turnbull">
+            
+            <img class="profile-image" src="assets/images/turnbull.png">
+            <img class="profile-name" alt="Malcolm Turnbull" src="assets/images/turnbull.svg">
+
+            <div class="profile-footer">
+              <h3>Anti-Vote <sub>to truncate Turnbull</sub></h3>
+              <span class="number">1</span>
+            </div>
+          </a>
+        </li>
+
+        <!-- Morrison -->
+        <li>
+          <a href="#moderate-morrison" data-share="moderate-morrison/" data-title="Morrison" class="profile profile-morrison">
+            
+            <img class="profile-image" src="assets/images/morrison.png">
+            <img class="profile-name" alt="Scott Morrison" src="assets/images/morrison.svg">
+
+            <div class="profile-footer">
+              <h3>Anti-Vote <sub>to moderate Morrison</sub></h3>
+              <span class="number">1</span>
+            </div>
+          </a>
+        </li>
+
+        <!-- Dutton -->
+        <li>
+          <a href="#denounce-dutton" data-share="denounce-dutton/" data-title="Dutton" class="profile profile-dutton">
+            
+            <img class="profile-image" src="assets/images/dutton.png">
+            <img class="profile-name" alt="Peter Dutton" src="assets/images/dutton.svg">
+
+            <div class="profile-footer">
+              <h3>Anti-Vote <sub>to denounce Dutton</sub></h3>
+              <span class="number">1</span>
+            </div>
+          </a>
+        </li>
+
+        <!-- Hunt -->
+        <li>
+          <a href="#hate-on-hunt" data-share="hate-on-hunt/" data-title="Hunt" class="profile profile-hunt">
+            
+            <img class="profile-image" src="assets/images/hunt.png">
+            <img class="profile-name" alt="Peter Hunt" src="assets/images/hunt.svg">
+
+            <div class="profile-footer">
+              <h3>Anti-Vote <sub>to hate on Hunt</sub></h3>
+              <span class="number">1</span>
+            </div>
+          </a>
+        </li>
+
+      </ul>
+
+      <div class="button-container">
+        <a href="#wtf" title="Tell me more" class="button button-simple">WTF?</a>
+      </div>
+
+    </main>
+
+    <footer class="footer overlay-all">
+      <div class="container">
+        
+        <div class="footer-left">
+          <img alt="Anti-Vote 2016" class="footer-logo" src="assets/images/antivote.svg">
+          <h2>The nicest way of hating<br>
+          is a disapproval rating <img alt=":)" src="assets/images/smiley.svg"></h2>
+        </div>
+
+        <div class="footer-right">
+          <h3>Anti-Votes Counted</h3>
+          <ul class="footer-count">
+            <li class="number">0</li>
+            <li class="number">0</li>
+            <li class="number">0</li>
+            <li class="number">0</li>
+            <li class="number">0</li>
+          </ul>
+        </div>
+      
+      </div>
+    </footer>
+
+    <aside class="overlay overlay-wtf">
+
+      <div class="container">
+      
+        <header class="header">
+          <img class="header-headline" alt="Who is Australia's No.1 Political Pariah?" src="assets/images/antivote-headline.svg">
+          <span class="sub">Share your pick and help send a message<br>
+          to the folk that voted them in.</span>
+        </header>
+
         <p>Hunt, Dutton, Morrison, Turnbull. This band of merry miscreants didn’t elect themselves. They were placed into power by the folk of their local communities through indifferrence, disregard, or misguided faith.</p>
 
-<p>Each of these mutton-headed buffoons has already tramp-stamped our history with failures that will not laser off.</p>
+        <p>Each of these mutton-headed buffoons has already tramp-stamped our history with failures that will not laser off.</p>
 
-<p>Share your pick for Australia’s no.1 Political Pariah and help send a message to the folk that voted them in.</p>
+        <p>Share your pick for Australia’s no.1 Political Pariah and help send a message to the folk that voted them in.</p>
 
-<p><a href="https://anti-vote.xyz">https://anti-vote.xyz</a></p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/antivote">antivote</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+        <a href="#" class="button button-vote">
+          <h3>Anti-Vote <sub>Click here to vote now</sub></h3>
+          <span class="number">1</span>
+        </a>
+      </div>
+
+    </aside>
+
+    <aside class="overlay overlay-turnbull">
+
+      <div class="container">
+      
+        <header class="header">
+          <img class="header-headline" alt="Who is Australia's No.1 Political Pariah?" src="assets/images/antivote-headline.svg">
+          <span class="sub">Share your pick and help send a message<br>
+          to the folk that voted them in.</span>
+        </header>
+
+        <p>This brown-nosing bozo didn’t elect himself.</p>
+
+        <p>Help send a message to the folks in Sydney who voted him in. From Bondi and Bronte in the east, to the snazzy shores of Vaucluse and Watson’s Bay, then back through Paddington and King’s Cross.</p>
+
+        </p>Every share on social is an anti-vote in the right direction.<br>
+        Tap the button below to share to Facebook and cast your anti-vote.</p>
+
+        <a href="#" class="button button-vote">
+          <h3>Anti-Vote <sub>to truncate Turnbull</sub></h3>
+          <span class="number">1</span>
+        </a>
+      </div>
+
+    </aside>
+
+    <script>
+      var props = {
+        api: "https://api.facebook.com/method/links.getStats?urls=%%URL%%&format=json",
+        share: "https://www.facebook.com/sharer/sharer.php?u=",
+        list: [
+          "http://anti-vote.xyz/",
+          "http://anti-vote.xyz/truncate-turnbull",
+          "http://anti-vote.xyz/moderate-morrison",
+          "http://anti-vote.xyz/denounce-dutton",
+          "http://anti-vote.xyz/hate-on-hunt",
+        ],
+        results: [],
+        html: {
+          number: '<li class="number">%%NUMBER%%</li>'
+        },
+        $el: {
+          count: document.querySelector('.footer-count'),
+          share: document.querySelectorAll('a.profile'),
+        }
+      },
+
+      fn = {
+
+        init: function () {
+          fn.get(props.list[0]);
+
+          for (i = 0; i < props.$el.share.length; ++i) {
+            props.$el.share[i].addEventListener('click', fn.on.share);
+          }
+        },
+
+        on: {
+          count: function (e) {
+            e.preventDefault();
+            fn.render((props.i + 1) % props.results.length);
+          },
+
+          share: function (e) {
+            e.preventDefault();
+            fn.share(props.list[0] + this.dataset.share, this.dataset.title);
+          }
+        },
+
+        share: function (url, vote) {
+           window.open(props.share + encodeURIComponent(url));
+          if(vote) ga('send', 'event', 'vote', vote);
+        },
+
+        get: function (url) {
+          props.current = url;
+          var xhr = new XMLHttpRequest();
+          xhr.open("GET", props.api.replace('%%URL%%', encodeURIComponent( url )));
+          xhr.onreadystatechange = fn.complete;
+          xhr.send();
+        },
+
+        complete: function () {
+          if(this.readyState !== 4) return;
+
+          var o = {
+            url: props.current,
+            slug: props.current.replace(props.list[0], '').replace('-', ' '),
+            count: 0
+          };
+
+          if (this.status == 200) {
+            try{
+              var response = JSON.parse(this.responseText);
+              o.count = response[0].total_count;
+            } catch(e) {}
+          }
+
+          props.results.push(o);
+          if(props.results.length<props.list.length) return fn.get(props.list[props.results.length]);
+          
+          props.results[0].count = props.results.reduce(function (total, o) {
+            return total + o.count;
+          }, 0);
+          fn.finalise();
+        },
+
+        finalise: function () {
+          props.$el.count.parentElement.addEventListener('click', fn.on.count);
+          fn.render(0);
+        },
+
+        render: function (i) {
+          props.i = i;
+          var count = props.results[i].count;
+          props.$el.count.previousElementSibling.textContent = props.results[i].slug.toUpperCase() || 'Anti-Votes Counted';
+          props.$el.count.innerHTML = ("0000" + count).slice(-Math.max(count.toString().length, 5)).split("").reduce(function (html, val) {
+            return html + props.html.number.replace('%%NUMBER%%', val);
+          }, '');
+        }
+      };
+
+      fn.init();
+    </script>
+
+
   </body>
+
+
 </html>
