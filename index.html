@@ -214,6 +214,10 @@
 
     <script>
       var props = {
+        duration: {
+          timeout: 5*1000,
+          refresh: 5*60*1000
+        },
         api: "https://api.facebook.com/method/links.getStats?urls=%%URL%%&format=json",
         share: "https://www.facebook.com/sharer/sharer.php?u=",
         list: [
@@ -236,8 +240,9 @@
       fn = {
 
         init: function () {
-          fn.get(props.list[0]);
+          fn.refresh();
 
+          props.$el.count.parentElement.addEventListener('click', fn.on.count);
           for (i = 0; i < props.$el.share.length; ++i) {
             props.$el.share[i].addEventListener('click', fn.on.share);
           }
@@ -246,7 +251,7 @@
         on: {
           count: function (e) {
             e.preventDefault();
-            fn.render((props.i + 1) % props.results.length);
+            fn.render();
           },
 
           share: function (e) {
@@ -258,6 +263,11 @@
         share: function (url, vote) {
            window.open(props.share + encodeURIComponent(url));
           if(vote) ga('send', 'event', 'vote', vote);
+        },
+
+        refresh: function () {
+          props.results = [];
+          fn.get(props.list[0]);
         },
 
         get: function (url) {
@@ -272,39 +282,48 @@
           if(this.readyState !== 4) return;
 
           var o = {
+            count: 0,
             url: props.current,
-            slug: props.current.replace(props.list[0], '').replace('-', ' '),
-            count: 0
+            slug: props.current.replace(props.list[0], '')
+                               .replace('-', ' ')
+                               .replace(/\//g, '')
           };
 
           if (this.status == 200) {
-            try{
+            try {
               var response = JSON.parse(this.responseText);
               o.count = response[0].total_count;
+              if(props.results.length===1) o.count += props.results[0].count;
             } catch(e) {}
           }
 
           props.results.push(o);
           if(props.results.length<props.list.length) return fn.get(props.list[props.results.length]);
           
-          props.results[0].count = props.results.reduce(function (total, o) {
+          props.results[0].count = props.results.slice(1).reduce(function (total, o) {
             return total + o.count;
           }, 0);
-          fn.finalise();
-        },
-
-        finalise: function () {
-          props.$el.count.parentElement.addEventListener('click', fn.on.count);
+          props.ready = Date.now();
           fn.render(0);
         },
 
+        timeout: function () {
+          clearTimeout(props.timeout);
+          if(Date.now() - props.ready > props.duration.refresh) fn.refresh(); 
+          else props.timeout = setTimeout(fn.render, props.duration.timeout);
+        },
+
         render: function (i) {
+          if(!props.ready) return;
+          if(typeof i === 'undefined') i = (props.i + 1) % props.results.length;
           props.i = i;
-          var count = props.results[i].count;
-          props.$el.count.previousElementSibling.textContent = props.results[i].slug.toUpperCase() || 'Anti-Votes Counted';
+          var count = props.results[i].count,
+              slug = props.results[i].slug;
+          props.$el.count.previousElementSibling.textContent = slug ? "to " + slug : 'Anti-Votes Counted';
           props.$el.count.innerHTML = ("0000" + count).slice(-Math.max(count.toString().length, 5)).split("").reduce(function (html, val) {
             return html + props.html.number.replace('%%NUMBER%%', val);
           }, '');
+          fn.timeout();
         }
       };
 
