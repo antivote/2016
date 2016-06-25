@@ -712,6 +712,14 @@ body,
   .profile-list .profile-footer sub {
     font-size: 0.407em;
     display: block; }
+    .profile-list .profile-footer sub::after {
+      content: "Tap to vote & share";
+      display: block;
+      position: relative;
+      top: 2.25em; }
+      @media screen and (min-width: 37.5em) {
+        .profile-list .profile-footer sub::after {
+          display: none; } }
   .profile-list .profile-footer .number {
     transition: 0.2s color;
     font-size: 1.09375em;
